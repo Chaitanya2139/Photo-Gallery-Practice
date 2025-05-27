@@ -1,0 +1,32 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom effect */
+.gallery img:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+/* Tablet: 2 columns */
+@media screen and (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
